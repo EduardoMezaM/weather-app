@@ -1,7 +1,7 @@
 {
-  "name": "templaterepos",
+  "name": "weather-app",
   "version": "1.0.0",
-  "description": "Template Repository",
+  "description": "weather app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EduardoMezaM/TemplateRepos.git"
+    "url": "git+https://github.com/EduardoMezaM/weather-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EduardoMezaM/TemplateRepos/issues"
+    "url": "https://github.com/EduardoMezaM/weather-app/issues"
   },
-  "homepage": "https://github.com/EduardoMezaM/TemplateRepos#readme",
+  "homepage": "https://github.com/EduardoMezaM/weather-app#readme",
   "devDependencies": {
     "css-loader": "^7.1.4",
     "html-loader": "^5.1.0",
