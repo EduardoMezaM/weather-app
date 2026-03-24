@@ -1,3 +1,4 @@
-import { displayWeather } from "./dom.js";
+import { displayWeather, displayWeatherGIF } from "./dom.js";
 
 displayWeather();
+displayWeatherGIF();

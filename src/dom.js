@@ -1,6 +1,7 @@
-import { getWeather } from "./api.js";
+import { getWeather, getWeatherGIF } from "./api.js";
 
 const data = await getWeather("London");
+const GIFdata = await getWeatherGIF(data.currentConditions.icon);
 
 export async function displayWeather() {
     console.log(data);
@@ -14,4 +15,8 @@ export async function displayWeather() {
     console.log(data.days[0].tempmin);    
     console.log(data.days[0].icon);
 
+}
+
+export async function displayWeatherGIF() {
+    console.log(GIFdata.data.images.original.url);
 }
