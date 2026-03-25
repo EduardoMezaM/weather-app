@@ -1,4 +1,7 @@
-import { displayWeather, displayWeatherGIF } from "./dom.js";
+import "./styles.css";
+import { displayAll } from "./dom.js";
 
-displayWeather();
-displayWeatherGIF();
+displayAll();
+
+const searchBtn = document.getElementById('searchBtn');
+searchBtn.addEventListener('click', displayAll)
