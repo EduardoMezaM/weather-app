@@ -1,7 +1,8 @@
 import "./styles.css";
-import { displayAll } from "./dom.js";
+import { displayAll, toggleDegrees } from "./dom.js";
 
 displayAll();
 
 const searchBtn = document.getElementById('searchBtn');
 searchBtn.addEventListener('click', displayAll)
+

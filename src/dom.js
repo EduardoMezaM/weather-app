@@ -11,14 +11,14 @@ const tempMin = document.getElementById('tempMin');
 const tomorrowCond = document.getElementById('tomorrowCond');
 const tomorrowDesc = document.getElementById('tomorrowDesc');
 
- async function displayWeather(data) {
+async function displayWeather(data) {
     console.log(data.address);
     console.log(data.currentConditions.temp);
     console.log(data.currentConditions.icon);
     console.log(data.description);
 
     city.innerText = data.address;
-    temp.innerText = data.currentConditions.temp;
+    temp.innerText = data.currentConditions.temp + ' °F';
     conditions.innerText = data.currentConditions.icon;
     description.innerText = data.description;
     
@@ -27,8 +27,8 @@ const tomorrowDesc = document.getElementById('tomorrowDesc');
     console.log(data.days[0].tempmin);    
     console.log(data.days[0].icon);
 
-    tempMax.innerText = data.days[0].tempmax;
-    tempMin.innerText = data.days[0].tempmin;    
+    tempMax.innerText = 'Max ' + data.days[0].tempmax + ' °F';
+    tempMin.innerText = 'Min ' + data.days[0].tempmin + ' °F';    
     tomorrowCond.innerText = data.days[0].icon;
     tomorrowDesc.innerText = data.days[0].description;
 
@@ -42,7 +42,6 @@ async function displayWeatherGIF(GIFdata) {
 export async function displayAll(){
 
     const cityValue = cityInput.value ? cityInput.value : "London";
-   // cityInput ? cityValue = cityInput.value : cityValue = 'London';
 
     const data = await getWeather(cityValue);
     const GIFdata = await getWeatherGIF(data.currentConditions.icon);
@@ -50,3 +49,16 @@ export async function displayAll(){
     displayWeather(data);
     displayWeatherGIF(GIFdata);
 }
+
+export async function toggleDegrees (data) {
+    const degrees = paseInt(data.currentConditions.temp);
+
+    if (isFarenheit == false) {
+        degrees = (degrees-32)(5/9);
+        isFarenheit = true;
+    }
+    else {
+        degrees = parseInt(data.currentConditions.temp);
+        isFarenheit = false;
+    } 
+};
